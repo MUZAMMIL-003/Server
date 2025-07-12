@@ -4,7 +4,9 @@ import HelperFunction from '../HelperFunction/HelperFunction.js';
 const router = express.Router();
 
 let data = [
-    { id: 1, task: "Sample Task 1" },
+    { id: 1, task: "Sample Task 1" , completed: false },
+    { id: 2, task: "Sample Task 2" , completed: true },
+    { id: 3, task: "Sample Task 3", completed: false },
 ]
 
 router.get('/', (req, res) => { // Get all Data
@@ -30,7 +32,7 @@ router.post('/', (req, res) => {
     }
 
     const newTask = {
-        id: Date.now(),
+        id: data.length + 1,
         task
     };
 
